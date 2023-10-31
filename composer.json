@@ -1,0 +1,15 @@
+{
+    "name": "ibm/pte-help",
+    "description": "App for Brest railway district safety exams",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alex Leoniuk",
+            "email": "alex.brest.by@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
