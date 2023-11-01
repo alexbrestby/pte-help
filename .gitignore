@@ -9,3 +9,5 @@
 
 # Игнорировать кэш-файлы
 /cache/
+
+/config/routes.php
