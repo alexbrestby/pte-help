@@ -1,7 +1,21 @@
 .header
     display: flex
+    justify-content: space-between
     align-items: center
     height: 60px
     padding: 10px 20px
     background: $color
     color: $bgColor
+    font-family: $headerFont
+
+    &-navigation
+        display: flex
+        justify-content: center
+        flex: 1
+
+    &-nav
+        display: flex
+        list-style: none
+        font-size: 1.5rem
+        li
+            margin: 0 20px
