@@ -23,10 +23,10 @@ body {
 
 a {
   text-decoration: none;
-  color: #B09361;
+  color: #b09361;
 }
 a:hover {
-  color: #49729C;
+  color: #49729c;
   cursor: pointer;
 }
 
@@ -34,16 +34,27 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   height: 60px;
   padding: 10px 20px;
   background: #212529;
   color: #f0f0f0;
   font-family: Tektur, sans-serif;
 }
+@media screen and (max-width: 992px) {
+  .header h1 {
+    font-size: 1.3rem;
+  }
+}
 .header-navigation {
   display: flex;
   justify-content: center;
   flex: 1;
+}
+@media screen and (max-width: 768px) {
+  .header-navigation {
+    display: none;
+  }
 }
 .header-nav {
   display: flex;
@@ -53,13 +64,100 @@ a:hover {
 .header-nav li {
   margin: 0 20px;
 }
+@media screen and (max-width: 992px) {
+  .header-nav li {
+    margin: 0 10px;
+  }
+}
 
 .main {
   display: flex;
+  flex-direction: column;
   flex: 1;
-  padding: 10px 20px;
+  padding: 20px;
   border-right: 2px solid #212529;
   border-left: 2px solid #212529;
+}
+
+.pte {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .pte {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+.swiper {
+  display: flex;
+  width: 100%;
+}
+@media screen and (max-width: 962px) {
+  .swiper {
+    min-width: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .swiper {
+    max-height: 20%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .swiper {
+    max-height: 17%;
+  }
+}
+.swiper-slide {
+  width: 100%;
+}
+.swiper-slide img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .swiper-slide img {
+    -o-object-position: center -190px;
+       object-position: center -190px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .swiper-slide img {
+    -o-object-position: center -75px;
+       object-position: center -75px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .swiper-slide img {
+    -o-object-position: center -85px;
+       object-position: center -85px;
+  }
+}
+
+.info {
+  padding-left: 20px;
+}
+@media screen and (max-width: 768px) {
+  .info {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+}
+.info p {
+  margin-bottom: 10px;
+  line-height: 130%;
+}
+.info p a {
+  color: #705322;
+  text-decoration: underline;
+}
+.info p span {
+  padding: 1px 5px;
+  background: #ffdb8b;
 }
 
 .contacts {
@@ -67,6 +165,8 @@ a:hover {
   flex-direction: column;
   flex: 1;
   padding: 10px 20px;
+  border-right: 2px solid #212529;
+  border-left: 2px solid #212529;
 }
 .contacts input {
   padding: 5px;

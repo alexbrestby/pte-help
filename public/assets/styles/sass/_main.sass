@@ -1,6 +1,52 @@
 .main
     display: flex
+    flex-direction: column
     flex: 1
-    padding: 10px 20px
+    padding: 20px
     border-right: 2px solid $color
     border-left: 2px solid $color
+
+.pte
+    display: flex
+    justify-content: center
+    width: 100%
+    @media screen and (max-width: 768px)
+        flex-direction: column
+        align-items: center
+        justify-content: start
+
+.swiper
+    display: flex
+    width: 100%
+    @media screen and (max-width: 962px)
+        min-width: 40%
+    @media screen and (max-width: 768px)
+        max-height: 20%
+    @media screen and (max-width: 640px)
+        max-height: 17%
+    &-slide
+        width: 100%
+        img
+            width: 100%
+            object-fit: cover
+            @media screen and (max-width: 768px)
+                object-position: center -190px
+            @media screen and (max-width: 640px)
+                object-position: center -75px
+            @media screen and (max-width: 374px)
+                object-position: center -85px
+
+.info
+    padding-left: 20px
+    @media screen and (max-width: 768px)
+        padding-left: 0
+        margin-top: 20px
+    p
+        margin-bottom: 10px
+        line-height: 130%
+        a
+            color: $linkColor2
+            text-decoration: underline
+        span
+            padding: 1px 5px
+            background: $markerColor
