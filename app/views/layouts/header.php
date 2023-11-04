@@ -13,7 +13,13 @@
 <body>
     <div class="wrapper">
         <header class="header">
+            <div class="hamburger">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
             <a class="header-logo" href="/">
+                <img src="/public/assets/img/favicon.svg" alt="favicon">
                 <h1>ptehelp.info</h1>
             </a>
             <nav class="header-navigation">
@@ -22,9 +28,10 @@
                     <li><a href="/elsafety">Электробезопасность</a></li>
                     <li><a href="/contacts">Контакты</a></li>
                 </ul>
+                <div class="enter">
+                    <a href="/">Вход</a>
+                </div>
             </nav>
-            <div class="enter">
-                <a href="/">Вход</a>
-            </div>
+
 
         </header>

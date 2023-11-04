@@ -1,3 +1,12 @@
+// burger menu init
+const hamburger = document.querySelector('.hamburger');
+const navigation = document.querySelector('.header-navigation')
+hamburger.addEventListener('click', function () {
+    this.classList.toggle('is-active');
+    navigation.classList.toggle('is-active');
+})
+
+// swiper slider init
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     autoplay: {
