@@ -1,6 +1,6 @@
 <?php include ROOT . '/app/views/layouts/header.php'; ?>
 <main class="main">
-    <section class="pte">
+    <section class="main-page">
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="/public/assets/img/pte-6.png" alt="book_6"></div>

@@ -21,7 +21,7 @@ body {
   margin: 0 auto;
   height: 100vh;
   background: #fff8f0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -191,17 +191,15 @@ a:hover {
   flex-direction: column;
   flex: 1;
   padding: 20px;
-  border-right: 2px solid #212529;
-  border-left: 2px solid #212529;
 }
 
-.pte {
+.main-page {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .pte {
+  .main-page {
     flex-direction: column;
     align-items: center;
     justify-content: start;
@@ -280,13 +278,63 @@ a:hover {
   background: #ffdb8b;
 }
 
+.main-page.pte {
+  gap: 20px;
+}
+
+.selector {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+  background: #f0f0f0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+@media screen and (max-width: 1380px) {
+  .selector {
+    padding-bottom: 50px;
+  }
+}
+.selector p {
+  text-align: justify;
+}
+.selector img {
+  max-width: 300px;
+  padding: 5px;
+}
+.selector a {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: #705322;
+  font-weight: 500;
+  min-height: 100%;
+  width: 100%;
+  padding: 20px;
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 1380px) {
+  .selector a {
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+  }
+}
+.selector a:hover {
+  color: #49729c;
+}
+
 .contacts {
   display: flex;
   flex-direction: column;
   flex: 1;
   padding: 10px 20px;
-  border-right: 2px solid #212529;
-  border-left: 2px solid #212529;
 }
 .contacts input {
   padding: 5px;

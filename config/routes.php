@@ -37,6 +37,9 @@ return array(
     'admin/order' => 'adminOrder/index',
     // Админпанель:
     'admin' => 'admin/index',
+    'pte/test' => 'pteTest/index',
+    'pte/exercises' => 'pteExercises/index',
+    'pte' => 'pte/index',
     // О магазине
     'contacts' => 'site/contact',
     'about' => 'site/about',
