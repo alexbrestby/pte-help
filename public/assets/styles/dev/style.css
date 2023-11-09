@@ -282,6 +282,10 @@ a:hover {
   gap: 20px;
 }
 
+.main-page.pte-test {
+  flex-direction: column;
+}
+
 .selector {
   position: relative;
   display: flex;
@@ -293,13 +297,15 @@ a:hover {
   background: #f0f0f0;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1280px) {
   .selector {
     padding-bottom: 50px;
   }
 }
 .selector p {
   text-align: justify;
+  line-height: 130%;
+  color: grey;
 }
 .selector img {
   max-width: 300px;
@@ -308,7 +314,6 @@ a:hover {
 .selector a {
   position: absolute;
   display: flex;
-  justify-content: flex-end;
   top: 0;
   left: 0;
   z-index: 1;
@@ -319,7 +324,7 @@ a:hover {
   padding: 20px;
   font-size: 1.3rem;
 }
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1280px) {
   .selector a {
     justify-content: center;
     align-items: flex-end;
@@ -328,6 +333,48 @@ a:hover {
 }
 .selector a:hover {
   color: #49729c;
+}
+
+.results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.item {
+  gap: 20px;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid grey;
+}
+@media screen and (max-width: 768px) {
+  .item {
+    flex-direction: column;
+  }
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  min-width: calc(30% - 10px);
+}
+.question img {
+  margin-top: 5px;
+  max-width: 30%;
+}
+
+.answers {
+  min-width: calc(70% - 10px);
+}
+.answers img {
+  max-width: 100%;
+}
+
+.highlight {
+  background: yellow;
 }
 
 .contacts {

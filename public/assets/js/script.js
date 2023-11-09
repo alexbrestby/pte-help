@@ -21,3 +21,94 @@ const swiper = new Swiper('.swiper', {
         crossFade: true,
     },
 });
+
+// live search handler
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('search');
+
+  searchInput.addEventListener('input', function () {
+      const query = searchInput.value;
+      const regex = new RegExp(query, "gi");
+
+      if (query.length > 3) {
+          fetchData('/pte/test', 'POST', { query: query })
+              .then(function (results) {
+                console.log(results);
+                  displayResults(results);
+              })
+              .catch(function (error) {
+                  console.error('Error:', error);
+              });
+      }
+
+      function mark() {
+        let box = document.querySelectorAll(".question");
+        box.forEach((element) => {
+          element.innerHTML.replace(/(<mark class="highlight">|<\/mark>)/gim, "");
+          element.innerHTML = element.innerHTML.replace(
+            regex,
+            '<mark class="highlight">$&</mark>'
+          );
+        });
+      }
+
+      if (query.length >= 5) {
+        setTimeout(mark, 300);
+      }
+  });
+
+  function fetchData(url, method, data) {
+      return fetch(url, {
+          method: method,
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams(data),
+      })
+      .then(function (response) {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      });
+  }
+
+  function displayResults(results) {
+      const resultsContainer = document.querySelector('.results');
+      resultsContainer.innerHTML = '';
+
+      results.forEach(function (result) {
+        const item = document.createElement('div');
+        item.classList.add('item')
+        const question = document.createElement('div');
+        question.classList.add('question')
+        const questionP = document.createElement('p');
+        questionP.textContent = `${result.quest}`;
+        question.appendChild(questionP);
+        if (result.quest_img) {
+          const questImg = document.createElement('img');
+          questImg.src = `/public/assets/img/db/${result.quest_img}`;
+          question.appendChild(questImg);
+        }
+        item.appendChild(question);
+        const answers = document.createElement('div');
+        answers.classList.add('answers');
+        let counter = 1;
+        for (i in result) {
+          if (i.match(/\bans\w*/) && result[i]) {
+            const answer = document.createElement('p');
+            answer.innerHTML = counter + '. ' + result[i];
+            answers.appendChild(answer);
+            counter++;
+          }       
+          if (i.match(/\bimg\w*/) && result[i]) {
+            const ansImage = document.createElement('img');
+            ansImage.src = `/public/assets/img/db/${result[i]}`;
+            answers.appendChild(ansImage);
+          }
+         }
+        item.appendChild(answers);
+        resultsContainer.appendChild(item);
+      });
+  }
+});
