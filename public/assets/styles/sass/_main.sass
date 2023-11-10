@@ -1,53 +1,57 @@
 .main
-    display: flex
-    flex-direction: column
-    flex: 1
-    padding: 20px
+  display: flex
+  flex-direction: column
+  flex: 1
+  padding: 20px
+  gap: 20px
 
 .main-page
-    display: flex
-    justify-content: center
-    width: 100%
-    @media screen and (max-width: 768px)
-        flex-direction: column
-        align-items: center
-        justify-content: start
+  display: flex
+  justify-content: center
+  width: 100%
+  @media screen and (max-width: 768px)
+    flex-direction: column
+    align-items: center
+    justify-content: start
 
 .swiper
-    display: flex
+  display: flex
+  width: 100%
+  @media screen and (max-width: 962px)
+    min-height: 40%
+  @media screen and (max-width: 768px)
+    max-height: 20%
+  @media screen and (max-width: 640px)
+    max-height: 17%
+  &-slide
     width: 100%
-    @media screen and (max-width: 962px)
-        min-width: 40%
-    @media screen and (max-width: 768px)
-        max-height: 20%
-    @media screen and (max-width: 640px)
-        max-height: 17%
-    &-slide
-        width: 100%
-        img
-            width: 100%
-            object-fit: cover
-            @media screen and (max-width: 768px)
-                object-position: center -190px
-            @media screen and (max-width: 640px)
-                object-position: center -75px
-            @media screen and (max-width: 374px)
-                object-position: center -85px
+    img
+      width: 100%
+      max-height: 100%
+      object-fit: cover
+      @media screen and (max-width: 768px)
+        object-position: center -190px
+      @media screen and (max-width: 640px)
+        object-position: center -75px
+      @media screen and (max-width: 374px)
+        object-position: center -85px
 
 .info
-    padding-left: 20px
-    @media screen and (max-width: 768px)
-        padding-left: 0
-        margin-top: 20px
-    p
-        margin-bottom: 10px
-        line-height: 130%
-        a
-            color: $linkColor2
-            text-decoration: underline
-            font-weight: bold
-            &:hover
-                color: $hoverColor
+  padding-left: 20px
+  @media screen and (max-width: 768px)
+    padding-left: 0
+    margin-top: 20px
+  @media screen and (max-width: 450px)
+    margin-top: calc(130vw - 550px)
+  p
+    margin-bottom: 10px
+    line-height: 130%
+    a
+      color: $linkColor2
+      text-decoration: underline
+      font-weight: bold
+      &:hover
+        color: $hoverColor
         span
-            padding: 1px 5px
-            background: $markerColor
+          padding: 1px 5px
+          background: $markerColor

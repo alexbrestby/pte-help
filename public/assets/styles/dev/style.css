@@ -191,6 +191,7 @@ a:hover {
   flex-direction: column;
   flex: 1;
   padding: 20px;
+  gap: 20px;
 }
 
 .main-page {
@@ -212,7 +213,7 @@ a:hover {
 }
 @media screen and (max-width: 962px) {
   .swiper {
-    min-width: 40%;
+    min-height: 40%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -230,6 +231,7 @@ a:hover {
 }
 .swiper-slide img {
   width: 100%;
+  max-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -261,6 +263,11 @@ a:hover {
     margin-top: 20px;
   }
 }
+@media screen and (max-width: 450px) {
+  .info {
+    margin-top: calc(130vw - 550px);
+  }
+}
 .info p {
   margin-bottom: 10px;
   line-height: 130%;
@@ -273,13 +280,18 @@ a:hover {
 .info p a:hover {
   color: #49729c;
 }
-.info p span {
+.info p a:hover span {
   padding: 1px 5px;
   background: #ffdb8b;
 }
 
 .main-page.pte {
   gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .main-page.pte {
+    margin-top: calc(600px - 145vw);
+  }
 }
 
 .main-page.pte-test {

@@ -24,37 +24,38 @@ const swiper = new Swiper('.swiper', {
 
 // live search handler
 document.addEventListener('DOMContentLoaded', function () {
-  const searchInput = document.getElementById('search');
+  if (window.location.pathname == '/pte/test') {
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value;
+      const regex = new RegExp(query, "gi");
 
-  searchInput.addEventListener('input', function () {
-    const query = searchInput.value;
-    const regex = new RegExp(query, "gi");
+      if (query.length > 3) {
+        fetchData('/pte/test', 'POST', { query: query })
+          .then(function (results) {
+            displayResults(results);
+          })
+          .catch(function (error) {
+            console.error('Error:', error);
+          });
+      }
 
-    if (query.length > 3) {
-      fetchData('/pte/test', 'POST', { query: query })
-        .then(function (results) {
-          displayResults(results);
-        })
-        .catch(function (error) {
-          console.error('Error:', error);
+      function mark() {
+        let box = document.querySelectorAll(".question");
+        box.forEach((element) => {
+          element.innerHTML.replace(/(<mark class="highlight">|<\/mark>)/gim, "");
+          element.innerHTML = element.innerHTML.replace(
+            regex,
+            '<mark class="highlight">$&</mark>'
+          );
         });
-    }
+      }
 
-    function mark() {
-      let box = document.querySelectorAll(".question");
-      box.forEach((element) => {
-        element.innerHTML.replace(/(<mark class="highlight">|<\/mark>)/gim, "");
-        element.innerHTML = element.innerHTML.replace(
-          regex,
-          '<mark class="highlight">$&</mark>'
-        );
-      });
-    }
-
-    if (query.length >= 5) {
-      setTimeout(mark, 300);
-    }
-  });
+      if (query.length >= 5) {
+        setTimeout(mark, 300);
+      }
+    });
+  }
 
   function fetchData(url, method, data) {
     return fetch(url, {
