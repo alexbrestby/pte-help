@@ -284,6 +284,7 @@ a:hover {
 
 .main-page.pte-test {
   flex-direction: column;
+  align-items: center;
 }
 
 .selector {
@@ -291,8 +292,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   justify-content: center;
+  width: 100%;
   padding: 20px;
   background: #f0f0f0;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -335,6 +336,22 @@ a:hover {
   color: #49729c;
 }
 
+.search {
+  width: 80%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin-top: 20px;
+  padding: 3px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 2px;
+  outline: 2px solid #b09361;
+}
+.search:focus {
+  outline: 2px solid #49729c;
+}
+
 .results {
   width: 100%;
   display: flex;
@@ -346,9 +363,10 @@ a:hover {
   gap: 20px;
   width: 100%;
   display: flex;
-  padding: 10px;
   margin: 10px 0;
-  border: 2px solid grey;
+  background: #f8f8f8;
+  border: 2px solid #b09361;
+  border-radius: 2px;
 }
 @media screen and (max-width: 768px) {
   .item {
@@ -360,17 +378,34 @@ a:hover {
   display: flex;
   flex-direction: column;
   min-width: calc(30% - 10px);
+  background: #f0f0f0;
+  padding: 10px;
+  line-height: 130%;
 }
 .question img {
   margin-top: 5px;
-  max-width: 30%;
+  width: 30%;
 }
 
 .answers {
+  display: flex;
+  flex-direction: column;
   min-width: calc(70% - 10px);
+  padding: 10px;
 }
 .answers img {
-  max-width: 100%;
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .answers img {
+    align-self: center;
+    width: 60%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .answers img {
+    width: 100%;
+  }
 }
 
 .highlight {

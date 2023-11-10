@@ -3,14 +3,15 @@
 
 .main-page.pte-test
   flex-direction: column
+  align-items: center
 
 .selector
   position: relative
   display: flex
   flex-direction: column
   align-items: center
-  width: 100%
   justify-content: center
+  width: 100%
   padding: 20px
   background: $bgColor
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
@@ -42,6 +43,18 @@
     &:hover
       color: $hoverColor
 
+.search
+  width: 80%
+  appearance: none
+  margin-top: 20px
+  padding: 3px
+  font-size: 1.3rem
+  border: none
+  border-radius: 2px
+  outline: 2px solid $linkColor
+  &:focus
+    outline: 2px solid $hoverColor
+
 .results
   width: 100%
   display: flex
@@ -52,9 +65,10 @@
   gap: 20px
   width: 100%
   display: flex
-  padding: 10px
   margin: 10px 0
-  border: 2px solid grey
+  background: $bgColor2
+  border: 2px solid $linkColor
+  border-radius: 2px
   @media screen and (max-width: 768px)
     flex-direction: column
 
@@ -62,14 +76,25 @@
   display: flex
   flex-direction: column
   min-width: calc(30% - 10px)
+  background: $bgColor
+  padding: 10px
+  line-height: 130%
   img
     margin-top: 5px
-    max-width: 30%
+    width: 30%
 
 .answers
+  display: flex
+  flex-direction: column
   min-width: calc(70% - 10px)
+  padding: 10px
   img
-    max-width: 100%
+    width: 50%
+    @media screen and (max-width: 768px)
+      align-self: center
+      width: 60%
+    @media screen and (max-width: 640px)
+      width: 100%
 
 .highlight
-  background: yellow 
+  background: yellow

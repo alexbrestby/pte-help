@@ -1,15 +1,13 @@
 <?php
 
-
 class SiteController
 {
     public function actionIndex()
     {
         $users = User::getAllUsers();
-        require_once(ROOT . '/app/views/site/index.php');
+        require_once ROOT . '/app/views/site/index.php';
         return true;
     }
-
 
     public function actionContact()
     {
@@ -21,7 +19,7 @@ class SiteController
 
         // Обработка формы
         if (isset($_POST['submit'])) {
-            // Если форма отправлена 
+            // Если форма отправлена
             // Получаем данные из формы
             $userEmail = $_POST['userEmail'];
             $userText = $_POST['userText'];
@@ -36,7 +34,7 @@ class SiteController
 
             if ($errors == false) {
                 // Если ошибок нет
-                // Отправляем письмо администратору 
+                // Отправляем письмо администратору
                 $adminEmail = 'php.start@mail.ru';
                 $message = "Текст: {$userText}. От {$userEmail}";
                 $subject = 'Тема письма';
@@ -45,7 +43,7 @@ class SiteController
             }
         }
 
-        require_once(ROOT . '/app/views/site/contact.php');
+        require_once ROOT . '/app/views/site/contact.php';
         return true;
     }
 }
