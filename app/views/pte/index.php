@@ -1,17 +1,6 @@
 <?php include ROOT . '/app/views/layouts/header.php';?>
 <main class="main">
 <section class="main-page">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/public/assets/img/pte-6.png" alt="book_6"></div>
-                <div class="swiper-slide"><img src="/public/assets/img/pte-1.png" alt="book_1"></div>
-                <div class="swiper-slide"><img src="/public/assets/img/pte-2.png" alt="book_2"></div>
-                <div class="swiper-slide"><img src="/public/assets/img/pte-3.png" alt="book_3"></div>
-                <div class="swiper-slide"><img src="/public/assets/img/pte-4.png" alt="book_4"></div>
-                <div class="swiper-slide"><img src="/public/assets/img/pte-5.png" alt="book_5"></div>
-                <div class="swiper-slide"><img src="/public/assets/img/pte-0.png" alt="book_0"></div>
-            </div>
-        </div>
         <div class="info">
             <p>
                 <a href="https://pravo.by/document/?guid=3961&p0=W21530414p" target="_blank">Правила технической эксплуатации</a>

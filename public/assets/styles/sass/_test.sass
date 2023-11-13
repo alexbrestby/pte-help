@@ -1,7 +1,9 @@
-.main-page.pte
+.main-page.pte,
+.main-page.elsafety
+  flex-direction: row
   gap: 20px
-  @media screen and (max-width: 768px)
-    margin-top: calc(600px - 145vw)
+  @media screen and (max-width: 750px)
+    flex-direction: column
 
 .main-page.pte-test
   flex-direction: column
@@ -16,7 +18,9 @@
   width: 100%
   padding: 20px
   background: $bgColor
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+  &:hover
+    background: $bgColor2
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
   @media screen and (max-width: 1280px)
     padding-bottom: 50px
   p
@@ -56,6 +60,8 @@
   outline: 2px solid $linkColor
   &:focus
     outline: 2px solid $hoverColor
+  @media screen and (max-width: 640px)
+    font-size: 1rem
 
 .results
   width: 100%
@@ -100,3 +106,6 @@
 
 .highlight
   background: yellow
+
+.doc-list
+  margin-left: 20px

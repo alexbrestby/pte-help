@@ -4,46 +4,64 @@
   flex: 1
   padding: 20px
   gap: 20px
+  overflow: auto
+  @media screen and (max-width: 768px)
+    margin-top: 60px
 
 .main-page
   display: flex
-  justify-content: center
+  align-items: center
+  flex-direction: column
   width: 100%
   @media screen and (max-width: 768px)
-    flex-direction: column
     align-items: center
     justify-content: start
 
-.swiper
+.motto
+  font-family: $headerFont
+  padding: 0 20px 20px 20px
+  font-size: 2.0rem
+  text-align: center
+  color: $linkColor2
+  @media screen and (max-width: 768px)
+    font-size: 1.5rem
+  img
+    width: 1.5rem
+    height: 1.5rem
+    margin: 0 10px
+    filter: invert(28%) sepia(57%) saturate(560%) hue-rotate(359deg) brightness(98%) contrast(84%)
+    @media screen and (max-width: 768px)
+      font-size: 1.2rem
+
+.book-gallery
   display: flex
   width: 100%
-  @media screen and (max-width: 962px)
-    min-height: 40%
+  max-height: calc(100vh - 160px)
+  gap: 10px
   @media screen and (max-width: 768px)
-    max-height: 20%
-  @media screen and (max-width: 640px)
-    max-height: 17%
+    flex-direction: column
+
+.swiper
+  display: flex
+  width: 45%
+  @media screen and (max-width: 768px)
+    width: 100%
+    height: 100vh
   &-slide
     width: 100%
+    max-height: calc(100vh - 250px)
     img
       width: 100%
-      max-height: 100%
+      min-height: 100%
       object-fit: cover
-      @media screen and (max-width: 768px)
-        object-position: center -190px
-      @media screen and (max-width: 640px)
-        object-position: center -75px
-      @media screen and (max-width: 374px)
-        object-position: center -85px
+      object-position: center center
 
 .info
   padding-left: 20px
   @media screen and (max-width: 768px)
     padding-left: 0
-    margin-top: 20px
-  @media screen and (max-width: 450px)
-    margin-top: calc(130vw - 550px)
-  p
+  p,
+  ul
     margin-bottom: 10px
     line-height: 130%
     a
@@ -52,6 +70,6 @@
       font-weight: bold
       &:hover
         color: $hoverColor
-        span
-          padding: 1px 5px
-          background: $markerColor
+    span
+      padding: 1px 5px
+      background: $markerColor
