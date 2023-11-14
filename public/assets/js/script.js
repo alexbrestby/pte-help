@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     resultsContainer.innerHTML = '';
 
     results.forEach(function (result) {
+      console.log(result);
       const item = document.createElement('div');
       item.classList.add('item')
       const question = document.createElement('div');
@@ -96,17 +97,17 @@ document.addEventListener('DOMContentLoaded', function () {
       answers.classList.add('answers');
       let counter = 1;
       for (i in result) {
-        if (i.match(/\bans\w*/) && result[i]) {
+        if (result[`ans_${counter}_is_true`]) {
           const answer = document.createElement('p');
-          answer.innerHTML = counter + '. ' + result[i];
+          answer.innerHTML = '- ' + result[`ans_${counter}`];
           answers.appendChild(answer);
-          counter++;
         }
         if (i.match(/\bimg\w*/) && result[i]) {
           const ansImage = document.createElement('img');
           ansImage.src = `/public/assets/img/db/${result[i]}`;
           answers.appendChild(ansImage);
         }
+        counter++;
       }
       item.appendChild(answers);
       resultsContainer.appendChild(item);

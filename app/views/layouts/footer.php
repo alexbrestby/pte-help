@@ -1,5 +1,13 @@
 <footer class="footer">
-    <h1>footer</h1>
+  <div class="copyright">
+    <a href="http://resume.leoniuk.org" target="_blank">&copy; leoniuk</a>
+  </div>
+  <div class="date">
+    <?php echo date('Y'); ?>
+  </div>
+  <div class="social-container">
+
+  </div>
 </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

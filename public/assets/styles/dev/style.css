@@ -293,6 +293,7 @@ a:hover {
 .info ul {
   margin-bottom: 10px;
   line-height: 130%;
+  color: #5e5852;
 }
 .info p a,
 .info ul a {
@@ -336,6 +337,7 @@ a:hover {
   width: 100%;
   padding: 20px;
   background: #f0f0f0;
+  border-radius: 2px;
 }
 .selector:hover {
   background: #f8f8f8;
@@ -349,7 +351,7 @@ a:hover {
 .selector p {
   text-align: justify;
   line-height: 130%;
-  color: grey;
+  color: #5e5852;
 }
 .selector img {
   max-width: 300px;
@@ -481,6 +483,7 @@ a:hover {
 
 .footer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 60px;
   padding: 10px 20px;
