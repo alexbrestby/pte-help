@@ -433,8 +433,26 @@ a:hover {
   line-height: 130%;
 }
 .question img {
+  max-height: 500px;
   margin-top: 5px;
-  width: 30%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (max-width: 640px) {
+  .question img {
+    width: 100%;
+  }
+}
+.question h2 {
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+.question-text {
+  margin-bottom: 15px;
+}
+.question-img {
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .answers {
@@ -458,12 +476,45 @@ a:hover {
   }
 }
 
+.answer {
+  display: flex;
+  width: calc(100% - 20px);
+  padding: 10px;
+  background: #fff8f0;
+  margin: 5px 10px;
+  border-radius: 2px;
+}
+.answer:hover {
+  background: #b09361;
+  color: #fff8f0;
+  cursor: pointer;
+}
+
 .highlight {
   background: yellow;
 }
 
 .doc-list {
   margin-left: 20px;
+}
+
+[type=checkbox],
+[type=radio] {
+  margin-right: 10px;
+}
+
+.success {
+  background: green;
+}
+.success:hover {
+  background: green;
+}
+
+.wrong {
+  background: red;
+}
+.wrong:hover {
+  background: red;
 }
 
 .contacts {

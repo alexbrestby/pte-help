@@ -16,8 +16,8 @@ function my_autoloader($class_name)
         $path = ROOT . '/app' . $path . $class_name . '.php';
 
         if (is_file($path)) {
-          // echo($path) . '<br>'; 
-          include_once $path;
+            // echo ($path) . '<br>';
+            include_once $path;
         }
     }
 }

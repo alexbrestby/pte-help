@@ -9,7 +9,7 @@ class Router
 
     /**
      * Свойство для хранения массива роутов
-     * @var array 
+     * @var array
      */
     private $routes;
 
@@ -22,7 +22,7 @@ class Router
         $routesPath = ROOT . '/config/routes.php';
 
         // Получаем роуты из файла
-        $this->routes = include($routesPath);
+        $this->routes = include $routesPath;
     }
 
     /**
@@ -42,6 +42,7 @@ class Router
     {
         // Получаем строку запроса
         $uri = $this->getURI();
+        // debug($uri);
 
         // Проверяем наличие такого запроса в массиве маршрутов (routes.php)
         foreach ($this->routes as $uriPattern => $path) {
@@ -68,13 +69,13 @@ class Router
                     $controllerName . '.php';
 
                 if (file_exists($controllerFile)) {
-                    include_once($controllerFile);
+                    include_once $controllerFile;
                 }
 
                 // Создать объект, вызвать метод (т.е. action)
                 $controllerObject = new $controllerName;
 
-                /* Вызываем необходимый метод ($actionName) у определенного 
+                /* Вызываем необходимый метод ($actionName) у определенного
                  * класса ($controllerObject) с заданными ($parameters) параметрами
                  */
                 $result = call_user_func_array(array($controllerObject, $actionName), $parameters);

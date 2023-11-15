@@ -40,4 +40,23 @@ class Search
         }
         return $userList;
     }
+
+    public static function getQuestion($id)
+    {
+        $db = Database::getConnection();
+
+        $sql = "SELECT * FROM quest WHERE q_id = :id";
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполняем запрос
+        $result->execute();
+
+        // Возвращаем данные
+        return $result->fetch();
+
+    }
 }

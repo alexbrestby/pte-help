@@ -25,6 +25,9 @@ const swiper = new Swiper('.swiper', {
 
 // live search handler
 document.addEventListener('DOMContentLoaded', function () {
+  const anyNumber = (num) => {
+    return num.match(/\[[0-9]+\]/);
+  }
   if (window.location.pathname == '/pte/test') {
     const searchInput = document.getElementById('search');
     searchInput.addEventListener('input', function () {
@@ -113,4 +116,25 @@ document.addEventListener('DOMContentLoaded', function () {
       resultsContainer.appendChild(item);
     });
   }
+
+  if (window.location.pathname.match(/\/pte\/exercise\/(\d+)/)) {
+    const allAnswers = document.querySelectorAll('.answer');
+    const allCorrectAnswers = document.querySelectorAll('.correct-answer');
+
+    const allCorrectAnswersArray = [...allCorrectAnswers].map(elem => {
+      return elem.innerHTML.slice(0, 6) + 'text';
+    });
+
+    [...allAnswers].forEach(elem => {
+      elem.addEventListener('click', () => {
+        if (allCorrectAnswersArray.includes(elem.classList[1])) {
+          elem.classList.add('success');
+          elem.children[0].checked = true;
+        } else {
+          elem.classList.add('wrong');
+        }
+      })
+    });
+  }
+
 });

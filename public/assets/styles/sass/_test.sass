@@ -89,8 +89,19 @@
   padding: 10px
   line-height: 130%
   img
+    max-height: 500px
     margin-top: 5px
-    width: 30%
+    object-fit: contain
+    @media screen and (max-width: 640px)
+      width: 100%
+  h2
+    margin-bottom: 15px
+    text-decoration: underline
+  &-text
+    margin-bottom: 15px
+  &-img
+    display: flex
+    margin-bottom: 15px
 
 .answers
   display: flex
@@ -105,8 +116,34 @@
     @media screen and (max-width: 640px)
       width: 100%
 
+.answer
+  display: flex
+  width: calc(100% - 20px)
+  padding: 10px
+  background: $mainColor
+  margin: 5px 10px
+  border-radius: 2px
+  &:hover
+    background: $linkColor
+    color: $mainColor
+    cursor: pointer
+
 .highlight
   background: yellow
 
 .doc-list
   margin-left: 20px
+
+[type="checkbox"],
+[type="radio"]
+  margin-right: 10px
+
+.success
+  background: green
+  &:hover
+    background: green
+
+.wrong
+  background: red
+  &:hover
+    background: red
