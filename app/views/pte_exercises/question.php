@@ -26,12 +26,24 @@ foreach ($question as $key => $value) {
             $number = substr($key, 4, 1);
             echo "<div class='answer $key'>$list_type $value</div>";
         }
+        if (preg_match('/ans_\d_img/', $key)) {
+            echo "<div class='answer-img><img src='/public/assets/img/db/{$value}'</div>";
+        }
         if (preg_match('/ans_\d_is_true/', $key) && $value === 1) {
             echo "<div class='correct-answer' hidden>$key</div>";
+        }
+        if ($key === 'ans_link' && $value) {
+            echo "<div class='answer-link' hidden>$value</div>";
         }
     }
 }
 ?>
+  </div>
+  <div class="prev-question d-none">
+    <a href="/pte/exercise/<?php echo $question['q_id'] - 1; ?>">предыдущий вопрос</a>
+  </div>
+  <div class="next-question d-none">
+    <a href="/pte/exercise/<?php echo $question['q_id'] + 1; ?>">следующий вопрос</a>
   </div>
 </main>
 <?php include ROOT . '/app/views/layouts/footer.php';?>

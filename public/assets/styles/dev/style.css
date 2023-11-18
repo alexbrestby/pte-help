@@ -463,6 +463,8 @@ a:hover {
 }
 .answers img {
   width: 50%;
+  margin-bottom: 5px;
+  border: 2px solid #49729c;
 }
 @media screen and (max-width: 768px) {
   .answers img {
@@ -484,6 +486,15 @@ a:hover {
   margin: 5px 10px;
   border-radius: 2px;
 }
+.answer-link {
+  margin-top: 20px;
+}
+.answer-link span {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: underline;
+  display: block;
+}
 .answer:hover {
   background: #b09361;
   color: #fff8f0;
@@ -504,17 +515,21 @@ a:hover {
 }
 
 .success {
-  background: green;
+  background: #198754;
+  color: #f0f0f0;
 }
 .success:hover {
-  background: green;
+  background: #198754;
+  color: #f0f0f0;
 }
 
 .wrong {
-  background: red;
+  background: #d9534f;
+  color: #f0f0f0;
 }
 .wrong:hover {
-  background: red;
+  background: #d9534f;
+  color: #f0f0f0;
 }
 
 .contacts {

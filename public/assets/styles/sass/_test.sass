@@ -110,6 +110,8 @@
   padding: 10px
   img
     width: 50%
+    margin-bottom: 5px
+    border: 2px solid $hoverColor
     @media screen and (max-width: 768px)
       align-self: center
       width: 60%
@@ -123,6 +125,12 @@
   background: $mainColor
   margin: 5px 10px
   border-radius: 2px
+  &-link
+    margin-top: 20px
+    span
+      width: fit-content
+      text-decoration: underline
+      display: block
   &:hover
     background: $linkColor
     color: $mainColor
@@ -139,11 +147,15 @@
   margin-right: 10px
 
 .success
-  background: green
+  background: $correctResponseColor
+  color: $bgColor
   &:hover
-    background: green
+    background: $correctResponseColor
+    color: $bgColor
 
 .wrong
-  background: red
+  background: $wrongResponseColor
+  color: $bgColor
   &:hover
-    background: red
+    background: $wrongResponseColor
+    color: $bgColor

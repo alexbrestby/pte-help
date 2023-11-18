@@ -120,18 +120,29 @@ document.addEventListener('DOMContentLoaded', function () {
   if (window.location.pathname.match(/\/pte\/exercise\/(\d+)/)) {
     const allAnswers = document.querySelectorAll('.answer');
     const allCorrectAnswers = document.querySelectorAll('.correct-answer');
+    const answerLink = document.querySelector('.answer-link');
 
     const allCorrectAnswersArray = [...allCorrectAnswers].map(elem => {
       return elem.innerHTML.slice(0, 6) + 'text';
     });
 
+    let counter = 0;
     [...allAnswers].forEach(elem => {
       elem.addEventListener('click', () => {
         if (allCorrectAnswersArray.includes(elem.classList[1])) {
-          elem.classList.add('success');
-          elem.children[0].checked = true;
+          elem.classList.toggle('success');
+          elem.children[0].checked === false ? elem.children[0].checked = true : elem.children[0].checked = false;
+          counter++;
+          if (counter === allCorrectAnswersArray.length) {
+            answerLink.removeAttribute('hidden');
+            if (answerLink.innerHTML.includes(';')) {
+              const answerLinkText = answerLink.innerHTML;
+              let correctAnserLinkText = answerLinkText.replace(/;/g, ';<br> - ').replace(/:/g, ':<br> - ');
+              answerLink.innerHTML = correctAnserLinkText;
+            }
+          }
         } else {
-          elem.classList.add('wrong');
+          elem.classList.toggle('wrong');
         }
       })
     });
